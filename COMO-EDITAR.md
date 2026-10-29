@@ -8,6 +8,10 @@ O site é feito de poucos arquivos:
 | `css/estilo.css` | Cores, fontes e layout (as cores ficam no topo, em `:root`) |
 | `js/filtro.js` | O filtro das faixas (não precisa mexer) |
 | `favicon.svg` | Ícone da aba do navegador |
+| `en/index.html` | Versão em inglês (mairadegrandi.com.br/en/) |
+| `es/index.html` | Versão em espanhol (mairadegrandi.com.br/es/) |
+
+**Três idiomas = três arquivos.** Qualquer mudança de conteúdo (trabalho novo, foto, telefone, Instagram) precisa ser feita no `index.html` em português e repetida no `en/index.html` e no `es/index.html`. Os títulos das obras ficam no original nas três versões; só as descrições são traduzidas. Visual, filtro e formulário são compartilhados e não precisam ser repetidos.
 
 Para ver o site no computador, é só abrir o `index.html` no navegador.
 
@@ -23,6 +27,7 @@ Tudo o que está entre **[colchetes]** é provisório e aparece com fundo pêsse
 - Trabalhos corporativos
 - Cartazes ou fotos de cada trabalho, com crédito do fotógrafo
 - Trechos de crítica (Imprensa)
+- Telefone de contato (no rodapé está como `(xx) xxxxx-xxxx`)
 - Instagram e link do site da Cia Teatro Enlatado
 - Arquivo `portfolio-maira-de-grandi.pdf` na mesma pasta do `index.html`
 

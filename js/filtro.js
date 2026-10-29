@@ -1,8 +1,20 @@
 /* Filtro das faixas: mostra só os trabalhos do papel escolhido.
-   Os papéis de cada trabalho vêm do atributo data-papeis no index.html.
+   Os papéis de cada trabalho vêm do atributo data-papeis no HTML.
    O endereço guarda o filtro (ex.: mairadegrandi.com.br/?papel=direcao),
-   então dá para mandar um link já filtrado. */
+   então dá para mandar um link já filtrado.
+   Os textos mudam conforme o idioma da página (<html lang="...">). */
 (function () {
+  var TEXTOS = {
+    pt: { um: 'trabalho', varios: 'trabalhos', filtrando: 'Filtrando', embreve: 'Em breve', titulo: 'Trabalhos', verTodos: 'Ver todos',
+          mostrando: function (a, b) { return 'Mostrando ' + a + ' de ' + b + ' trabalhos'; } },
+    en: { um: 'project', varios: 'projects', filtrando: 'Filtering', embreve: 'Coming soon', titulo: 'Work', verTodos: 'See all',
+          mostrando: function (a, b) { return 'Showing ' + a + ' of ' + b + ' projects'; } },
+    es: { um: 'trabajo', varios: 'trabajos', filtrando: 'Filtrando', embreve: 'Próximamente', titulo: 'Trabajos', verTodos: 'Ver todos',
+          mostrando: function (a, b) { return 'Mostrando ' + a + ' de ' + b + ' trabajos'; } }
+  };
+  var idioma = (document.documentElement.lang || 'pt').slice(0, 2).toLowerCase();
+  var T = TEXTOS[idioma] || TEXTOS.pt;
+
   var faixasNav = document.getElementById('faixas');
   var faixas = Array.prototype.slice.call(document.querySelectorAll('.faixa'));
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
@@ -25,7 +37,7 @@
   function contar(papel) {
     return cards.filter(function (c) { return papeisDe(c).indexOf(papel) >= 0; }).length;
   }
-  function plural(n) { return n + (n === 1 ? ' trabalho' : ' trabalhos'); }
+  function plural(n) { return n + ' ' + (n === 1 ? T.um : T.varios); }
 
   var reduzirMovimento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -37,8 +49,8 @@
       var ativo = p === papel;
       var n = contar(p);
       f.setAttribute('aria-pressed', ativo ? 'true' : 'false');
-      var texto = n === 0 ? 'Em breve' : plural(n);
-      f.querySelector('.faixa__estado').textContent = ativo ? 'Filtrando · ' + texto : texto;
+      var texto = n === 0 ? T.embreve : plural(n);
+      f.querySelector('.faixa__estado').textContent = ativo ? T.filtrando + ' · ' + texto : texto;
     });
 
     var mostrados = 0;
@@ -48,12 +60,10 @@
       if (mostra) mostrados++;
     });
 
-    titulo.textContent = papel ? nomes[papel] : 'Trabalhos';
-    status.textContent = papel
-      ? 'Mostrando ' + mostrados + ' de ' + total + ' trabalhos'
-      : plural(total);
+    titulo.textContent = papel ? nomes[papel] : T.titulo;
+    status.textContent = papel ? T.mostrando(mostrados, total) : plural(total);
     vazio.hidden = !(papel && mostrados === 0);
-    verTodos.textContent = 'Ver todos (' + total + ')';
+    verTodos.textContent = T.verTodos + ' (' + total + ')';
     verTodos.hidden = !papel;
 
     try {

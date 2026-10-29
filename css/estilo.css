@@ -73,6 +73,16 @@ a:hover { text-decoration-thickness: 2px; }
 .menu a { text-decoration: none; padding: 10px 0; }
 .menu a:hover { text-decoration: underline; }
 
+/* Seletor de idioma */
+.idiomas { display: flex; gap: 4px; font-weight: 700; font-size: 14px; }
+.idiomas a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px; padding: 0 8px; text-decoration: none;
+  border: 2px solid transparent;
+}
+.idiomas a:hover { border-color: var(--texto); }
+.idiomas a[aria-current="page"] { background: var(--mostarda); }
+
 /* ---------- Abertura ---------- */
 .abertura {
   max-width: var(--largura); margin: 0 auto; padding: 32px var(--margem) 48px;
@@ -204,6 +214,11 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- Celular ---------- */
 @media (max-width: 600px) {
+  /* no celular: marca e idiomas na primeira linha, menu embaixo */
+  .marca { order: 1; }
+  .idiomas { order: 2; }
+  .menu { order: 3; flex-basis: 100%; gap: 0 18px; }
+
   .faixa--dramaturgia { margin-left: 4%; }
   .faixa--atuacao     { margin-left: 8%; }
   .faixa--improviso   { margin-left: 12%; }
