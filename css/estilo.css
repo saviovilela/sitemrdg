@@ -1,0 +1,220 @@
+/* ============================================================
+   Site Maíra De Grandi — estilo
+   Cores e fontes ficam nas variáveis abaixo: mude aqui e o site
+   inteiro acompanha.
+   ============================================================ */
+
+/* Fontes hospedadas no próprio site (licença SIL OFL, ver pasta fontes/) */
+@font-face { font-family: 'Bebas Neue'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fontes/bebas-neue-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fontes/work-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fontes/work-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fontes/work-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fontes/work-sans-latin-700-normal.woff2') format('woff2'); }
+
+:root {
+  --vermelho: #C8102E;
+  --laranja: #FF6B35;
+  --violeta: #7B5CFF;
+  --salmao: #FFB5A7;
+  --mostarda: #F6B93B;
+  --pendente: #FFE9D9;
+  --texto: #000000;
+  --fundo: #FFFFFF;
+
+  --fonte-titulo: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --fonte-texto: 'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --largura: 1240px;
+  --margem: clamp(16px, 4vw, 48px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 400; margin: 0; line-height: 0.92; }
+p { margin: 0; }
+
+a { color: var(--texto); }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible { outline: 3px solid var(--texto); outline-offset: 3px; }
+
+.pular {
+  position: absolute; left: 16px; top: -60px;
+  background: var(--mostarda); padding: 10px 16px; font-weight: 700; z-index: 10;
+}
+.pular:focus { top: 16px; }
+
+/* Conteúdo provisório: fica marcado para ninguém esquecer de trocar */
+.pendente { background: var(--pendente); outline: 1px dashed var(--laranja); padding: 0 4px; }
+
+/* ---------- Barra do topo ---------- */
+.topo-barra {
+  max-width: var(--largura); margin: 0 auto; padding: 20px var(--margem);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px;
+}
+.marca { font-family: var(--fonte-titulo); font-size: 28px; letter-spacing: 0.02em; text-decoration: none; }
+.menu { display: flex; flex-wrap: wrap; gap: 4px 22px; font-weight: 600; font-size: 15px; }
+.menu a { text-decoration: none; padding: 10px 0; }
+.menu a:hover { text-decoration: underline; }
+
+/* ---------- Abertura ---------- */
+.abertura {
+  max-width: var(--largura); margin: 0 auto; padding: 32px var(--margem) 48px;
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px;
+}
+.abertura h1 { font-size: clamp(76px, 13vw, 190px); line-height: 0.84; }
+.abertura__texto { max-width: 34ch; font-size: 18px; }
+
+/* ---------- Faixas (filtro) ---------- */
+.faixas { display: flex; flex-direction: column; gap: 6px; }
+
+.faixa {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px;
+  min-height: 44px; border: 0; margin: 0;
+  padding: 0.12em var(--margem) 0.04em;
+  font-family: var(--fonte-titulo); font-size: clamp(52px, 9.6vw, 140px); line-height: 1.05;
+  text-align: left; color: var(--texto); cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.faixa:hover { transform: translateX(10px); }
+.faixa__estado { font-family: var(--fonte-texto); font-size: 19px; font-weight: 700; line-height: 1.3; }
+
+/* escada: cada faixa começa um pouco mais à direita */
+.faixa--direcao     { margin-left: 0;   background: var(--vermelho); color: #FFFFFF; }
+.faixa--dramaturgia { margin-left: 5%;  background: var(--laranja); }
+.faixa--atuacao     { margin-left: 10%; background: var(--violeta); color: #FFFFFF; }
+.faixa--improviso   { margin-left: 15%; background: var(--salmao); }
+.faixa--corporativo { margin-left: 20%; background: var(--mostarda); }
+
+/* com um filtro ativo, as outras faixas ficam mais apagadas */
+.faixas.filtrando .faixa[aria-pressed="false"] { opacity: 0.55; }
+.faixas.filtrando .faixa[aria-pressed="false"]:hover { opacity: 0.85; }
+
+/* ---------- Seções ---------- */
+.secao { max-width: var(--largura); margin: 0 auto; padding: 80px var(--margem); }
+.secao h2, .pesquisa__titulo, .rodape h2 { font-size: clamp(52px, 7vw, 92px); line-height: 0.9; }
+
+.secao__cabeca {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px;
+  margin-bottom: 36px;
+}
+.trabalhos__status { margin-top: 8px; font-size: 15px; font-weight: 600; }
+
+.botao {
+  min-height: 44px; padding: 0 20px; border: 0; cursor: pointer;
+  font-family: inherit; font-size: 15px; font-weight: 600; color: var(--texto);
+}
+.botao--violeta { background: var(--violeta); }
+.botao:hover { text-decoration: underline; }
+
+/* ---------- Cards de trabalhos ---------- */
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 24px; }
+
+.card { display: flex; flex-direction: column; gap: 8px; }
+.card[hidden] { display: none; }
+.card__img {
+  aspect-ratio: 3 / 4; padding: 20px; margin-bottom: 4px;
+  display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
+  overflow: hidden;
+}
+.card__img:has(img) { padding: 0; }
+.card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__img--direcao     { background: var(--vermelho); color: #FFFFFF; }
+.card__img--dramaturgia { background: var(--laranja); }
+.card__img--atuacao     { background: var(--violeta); color: #FFFFFF; }
+.card__img--improviso   { background: var(--salmao); }
+.card__img--corporativo { background: var(--mostarda); }
+.card__img--pendente    { background: var(--pendente); }
+.card__img .pendente { color: var(--texto); font-size: 13px; }
+.card__ano { font-family: var(--fonte-titulo); font-size: 56px; line-height: 1; }
+.card__tags { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.card__titulo { font-size: 34px; line-height: 1; }
+.card__info { font-size: 15px; }
+
+.vazio { padding: 32px; border: 2px dashed var(--mostarda); font-size: 17px; outline: none; }
+
+/* ---------- Pesquisa ---------- */
+.pesquisa { background: var(--violeta); }
+.pesquisa__dentro { max-width: var(--largura); margin: 0 auto; padding: 80px var(--margem); }
+.pesquisa__titulo { margin-bottom: 40px; }
+.pesquisa__eixos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; }
+.eixo { display: flex; flex-direction: column; gap: 10px; }
+.eixo__num { font-family: var(--fonte-titulo); font-size: 56px; line-height: 1; }
+.eixo h3 { font-size: 46px; line-height: 0.95; }
+.eixo p { font-size: 15px; font-weight: 600; }
+
+/* ---------- Sobre ---------- */
+.sobre { display: flex; flex-wrap: wrap; gap: 40px 64px; }
+.sobre__texto { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.sobre__lead { font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; line-height: 1.25; }
+.fatos { flex: 1 1 320px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+.fatos > div { border-top: 3px solid var(--laranja); padding-top: 12px; }
+.fatos dt { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.fatos dd { margin: 4px 0 0; }
+
+/* ---------- Imprensa ---------- */
+.imprensa { padding-top: 0; }
+.imprensa h2 { margin-bottom: 32px; }
+.citacoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.citacao { margin: 0; padding: 28px; border-left: 0; background: var(--salmao); display: flex; flex-direction: column; gap: 10px; }
+.citacao blockquote { margin: 0; font-size: 24px; font-weight: 500; line-height: 1.25; }
+.citacao figcaption { font-size: 14px; }
+
+/* ---------- Rodapé / contato ---------- */
+.rodape { background: var(--laranja); }
+.rodape__dentro { max-width: var(--largura); margin: 0 auto; padding: 72px var(--margem) 40px; display: flex; flex-direction: column; gap: 22px; }
+/* Formulário de contato */
+.form { max-width: 760px; display: flex; flex-direction: column; gap: 18px; }
+.form__linha { display: flex; flex-wrap: wrap; gap: 18px; }
+.form__linha .form__campo { flex: 1 1 240px; min-width: 0; }
+.form__campo { display: flex; flex-direction: column; gap: 6px; }
+.form__campo label { font-weight: 700; font-size: 15px; }
+.form__campo input, .form__campo textarea {
+  font: inherit; font-size: 17px; color: var(--texto);
+  background: #FFFFFF; border: 2px solid var(--texto); border-radius: 0;
+  padding: 12px 14px; min-height: 48px; width: 100%;
+}
+.form__campo textarea { resize: vertical; min-height: 140px; }
+.form__campo input:focus-visible, .form__campo textarea:focus-visible { outline: 3px solid var(--texto); outline-offset: 2px; }
+.form__isca { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form__aviso { font-size: 14px; }
+.form__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.form__status { font-weight: 700; }
+.botao--escuro { background: var(--texto); color: #FFFFFF; min-height: 52px; padding: 0 28px; font-size: 17px; }
+.botao[disabled] { opacity: 0.6; cursor: wait; }
+.rodape__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; font-weight: 600; }
+.rodape__links a { display: inline-block; padding: 8px 0; }
+.rodape__creditos { margin-top: 24px; font-size: 14px; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .faixa--dramaturgia { margin-left: 4%; }
+  .faixa--atuacao     { margin-left: 8%; }
+  .faixa--improviso   { margin-left: 12%; }
+  .faixa--corporativo { margin-left: 16%; }
+  .faixa:hover { transform: none; }
+
+  /* duas colunas de cards no celular, para a lista não ficar enorme */
+  .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 14px; }
+  .card__img { padding: 12px; }
+  .card__ano { font-size: 36px; }
+  .card__titulo { font-size: 24px; }
+  .card__tags { font-size: 11px; }
+  .card__info { font-size: 14px; }
+}

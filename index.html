@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maíra De Grandi — direção, dramaturgia, atuação e improviso</title>
+<meta name="description" content="Maíra De Grandi: diretora, dramaturga, atriz e improvisadora. Trabalhos, pesquisa e contato.">
+<link rel="canonical" href="https://mairadegrandi.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maíra De Grandi">
+<meta property="og:description" content="Diretora, dramaturga, atriz e improvisadora.">
+<meta property="og:url" content="https://mairadegrandi.com.br/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fontes/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!--
+  COMO ACHAR O QUE FALTA: tudo entre [colchetes] e com a classe "pendente"
+  é conteúdo provisório, a preencher antes de publicar.
+  Instruções de edição: veja o arquivo COMO-EDITAR.md
+-->
+
+<a class="pular" href="#trabalhos">Pular para os trabalhos</a>
+
+<header class="topo-barra">
+  <a class="marca" href="#topo">M. De Grandi</a>
+  <nav aria-label="Principal" class="menu">
+    <a href="#trabalhos">Trabalhos</a>
+    <a href="#pesquisa">Pesquisa</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#imprensa">Imprensa</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="topo" class="abertura">
+  <h1>Maíra<br>De Grandi</h1>
+  <p class="abertura__texto"><span class="pendente">[Frase de posicionamento — a escrever com a Maíra]</span> Escolha uma faixa para ver os trabalhos.</p>
+</section>
+
+<!-- FAIXAS: cada botão filtra os trabalhos pelo papel em data-papel -->
+<nav aria-label="Filtrar trabalhos por papel" class="faixas" id="faixas">
+  <button type="button" class="faixa faixa--direcao" data-papel="direcao" aria-pressed="false" aria-controls="lista-trabalhos">
+    <span class="faixa__nome">Direção</span><span class="faixa__estado"></span>
+  </button>
+  <button type="button" class="faixa faixa--dramaturgia" data-papel="dramaturgia" aria-pressed="false" aria-controls="lista-trabalhos">
+    <span class="faixa__nome">Dramaturgia</span><span class="faixa__estado"></span>
+  </button>
+  <button type="button" class="faixa faixa--atuacao" data-papel="atuacao" aria-pressed="false" aria-controls="lista-trabalhos">
+    <span class="faixa__nome">Atuação</span><span class="faixa__estado"></span>
+  </button>
+  <button type="button" class="faixa faixa--improviso" data-papel="improviso" aria-pressed="false" aria-controls="lista-trabalhos">
+    <span class="faixa__nome">Improviso</span><span class="faixa__estado"></span>
+  </button>
+  <button type="button" class="faixa faixa--corporativo" data-papel="corporativo" aria-pressed="false" aria-controls="lista-trabalhos">
+    <span class="faixa__nome">Corporativo</span><span class="faixa__estado"></span>
+  </button>
+</nav>
+
+<section id="trabalhos" class="secao" aria-labelledby="trabalhos-titulo">
+  <div class="secao__cabeca">
+    <div>
+      <h2 id="trabalhos-titulo">Trabalhos</h2>
+      <p class="trabalhos__status" id="trabalhos-status" aria-live="polite"></p>
+    </div>
+    <button type="button" class="botao botao--violeta" id="ver-todos">Ver todos</button>
+  </div>
+
+  <!--
+    LISTA DE TRABALHOS
+    data-papeis: papéis da Maíra no trabalho, separados por espaço
+      (direcao, dramaturgia, atuacao, improviso, corporativo).
+      Vazio = função ainda não confirmada (aparece só em "Ver todos").
+    card__img--xxx: cor do card (direcao, dramaturgia, atuacao, improviso, corporativo, pendente).
+  -->
+  <div class="grade" id="lista-trabalhos">
+
+    <article class="card" data-papeis="direcao">
+      <div class="card__img card__img--direcao"><span class="card__ano">2025</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Direção (codireção)</p>
+      <h3 class="card__titulo">Na Sala dos Espelhos</h3>
+      <p class="card__info">Adaptação de Liv Strömquist. Codireção com Michelle Ferreira. Sesc Ipiranga, nov/2025.</p>
+    </article>
+
+    <article class="card" data-papeis="direcao dramaturgia">
+      <div class="card__img card__img--atuacao"><span class="card__ano">2025</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Direção · Dramaturgia</p>
+      <h3 class="card__titulo">Brodagem: uma comédia drag king</h3>
+      <p class="card__info">Temporada em Porto Alegre, 2025. <span class="pendente">[confirmar teatro e festival]</span></p>
+    </article>
+
+    <article class="card" data-papeis="atuacao">
+      <div class="card__img card__img--dramaturgia"><span class="card__ano">2024</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Atuação</p>
+      <h3 class="card__titulo">Rádio Vinil</h3>
+      <p class="card__info">Cia Imprevisíveis, direção de Rhena de Faria. Circuito Municipal de Cultura.</p>
+    </article>
+
+    <article class="card" data-papeis="atuacao">
+      <div class="card__img card__img--improviso"><span class="card__ano">2023</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Atuação</p>
+      <h3 class="card__titulo">4 da Espécie – a história do corpo coisa nenhuma</h3>
+      <p class="card__info">A Má Cia Provoca, direção de Michelle Ferreira. Sesc 24 de Maio. <span class="pendente">[ano: 2022 ou 2023?]</span></p>
+    </article>
+
+    <article class="card" data-papeis="improviso">
+      <div class="card__img card__img--direcao"><span class="card__ano">2020</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Improviso <span class="pendente">[função a confirmar]</span></p>
+      <h3 class="card__titulo">ImpropériAs – Improvisação Online</h3>
+      <p class="card__info">Virada Cultural, dez/2020.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2020</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">1ª Ocupação Mulheres Protagonistas</h3>
+      <p class="card__info">Damas Produções, mar/2020.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2020–22</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">“Deus me dê a confiança de um homem branco medíocre”</h3>
+      <p class="card__info">Estreia online, Casa de Cultura Brasilândia. <span class="pendente">[ano exato]</span></p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2019</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">Deus Deve Estar Distraído</h3>
+      <p class="card__info">Monólogo com textos de Caio Fernando Abreu, direção de Nelson Baskerville.</p>
+    </article>
+
+    <article class="card" data-papeis="improviso">
+      <div class="card__img card__img--atuacao"><span class="card__ano">2019</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Improviso <span class="pendente">[função a confirmar]</span></p>
+      <h3 class="card__titulo">Não Tem Xícara</h3>
+      <p class="card__info">Comédia improvisada. Teatro UOL / Teatro Folha.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2018</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">Tem Alguém que nos Odeia</h3>
+      <p class="card__info">Direção de Michelle Ferreira, com Mariana Mantovani. Sesc Belenzinho. Também em versão live.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2017</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">2 [duas]</h3>
+      <p class="card__info">Cia Teatro Enlatado.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2017</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">O Relicário</h3>
+      <p class="card__info">A Musa Heróica, direção de Rhena de Faria. Prêmio Zé Renato, 5ª edição.</p>
+    </article>
+
+    <article class="card" data-papeis="direcao improviso">
+      <div class="card__img card__img--direcao"><span class="card__ano">2016</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Direção · Improviso</p>
+      <h3 class="card__titulo">O Livro do Improviso</h3>
+      <p class="card__info">Criado com participação do público em bibliotecas municipais.</p>
+    </article>
+
+    <article class="card" data-papeis="atuacao">
+      <div class="card__img card__img--improviso"><span class="card__ano">2016</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Atuação</p>
+      <h3 class="card__titulo">Me voy a saltar sobre su cuerpo</h3>
+      <p class="card__info">Elenco. Sesc. <span class="pendente">[confirmar grafia do título]</span></p>
+    </article>
+
+    <article class="card" data-papeis="direcao atuacao">
+      <div class="card__img card__img--dramaturgia"><span class="card__ano">2010–15</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags">Direção · Atuação</p>
+      <h3 class="card__titulo">Drive-Thru</h3>
+      <p class="card__info">Espetáculo-intervenção numa cabine na Praça Roosevelt.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2013–14</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">O Rinoceronte, a Lua e o Tonel</h3>
+      <p class="card__info">Infantil, texto de Peter Bichsel, direção de Ramiro Silveira.</p>
+    </article>
+
+    <article class="card" data-papeis="">
+      <div class="card__img card__img--pendente"><span class="card__ano">2013–14</span><span class="pendente">[Cartaz]</span></div>
+      <p class="card__tags pendente">[função a confirmar]</p>
+      <h3 class="card__titulo">Domingo no Museu</h3>
+      <p class="card__info pendente">[descrição a preencher]</p>
+    </article>
+
+  </div>
+
+  <p class="vazio pendente" id="trabalhos-vazio" hidden>[Trabalhos corporativos — a preencher com a Maíra]</p>
+</section>
+
+<section id="pesquisa" class="pesquisa" aria-labelledby="pesquisa-titulo">
+  <div class="pesquisa__dentro">
+    <h2 id="pesquisa-titulo" class="pesquisa__titulo">Pesquisa</h2>
+    <div class="pesquisa__eixos">
+      <div class="eixo">
+        <span class="eixo__num">01</span>
+        <h3>Humor e improvisação</h3>
+        <p>Pesquisa contínua em humor, improvisação e performance.</p>
+      </div>
+      <div class="eixo">
+        <span class="eixo__num">02</span>
+        <h3>Drag king e masculinidade</h3>
+        <p>Desde 2023.</p>
+      </div>
+      <div class="eixo">
+        <span class="eixo__num">03</span>
+        <h3>Olhar feminino</h3>
+        <p>Desde 2023.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="secao sobre" aria-labelledby="sobre-titulo">
+  <div class="sobre__texto">
+    <h2 id="sobre-titulo">Sobre</h2>
+    <p class="sobre__lead">Diretora, dramaturga, atriz e improvisadora.</p>
+    <p class="pendente">[Minibio — usar a versão do arquivo “Maíra Minibio.rtf”]</p>
+  </div>
+  <dl class="fatos">
+    <div>
+      <dt>Formação</dt>
+      <dd>Bacharel em Artes Cênicas — TAFE University, Austrália, 2004</dd>
+    </div>
+    <div>
+      <dt>Companhia</dt>
+      <dd>Cia Teatro Enlatado — sócia-fundadora, produtora e diretora desde 2009</dd>
+    </div>
+    <div>
+      <dt>Pesquisa</dt>
+      <dd>Humor, improvisação e performance; desde 2023, gênero e masculinidade (drag king) e olhar feminino</dd>
+    </div>
+  </dl>
+</section>
+
+<section id="imprensa" class="secao imprensa" aria-labelledby="imprensa-titulo">
+  <h2 id="imprensa-titulo">Imprensa</h2>
+  <div class="citacoes">
+    <figure class="citacao">
+      <blockquote class="pendente">“[Trecho de crítica]”</blockquote>
+      <figcaption class="pendente">[Veículo, data — com link para o original]</figcaption>
+    </figure>
+    <figure class="citacao">
+      <blockquote class="pendente">“[Trecho de crítica]”</blockquote>
+      <figcaption class="pendente">[Veículo, data — com link para o original]</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer id="contato" class="rodape">
+  <div class="rodape__dentro">
+    <h2>Contato</h2>
+
+    <!--
+      FORMULÁRIO DE CONTATO (serviço Formspree)
+      As mensagens chegam no e-mail cadastrado no formulário do Formspree;
+      esse e-mail não aparece no código do site.
+      Para ativar: troque COLE-AQUI-O-ID no endereço abaixo pelo ID do formulário
+      (o código que vem depois de /f/ no painel do Formspree).
+    -->
+    <form class="form" id="form-contato" action="https://formspree.io/f/xbggkrgr" method="POST">
+      <input type="hidden" name="subject" value="Nova mensagem pelo site mairadegrandi.com.br">
+      <!-- armadilha contra spam: pessoas não veem este campo, robôs preenchem -->
+      <input type="text" name="_gotcha" class="form__isca" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="form__linha">
+        <div class="form__campo">
+          <label for="f-nome">Nome</label>
+          <input id="f-nome" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form__campo">
+          <label for="f-email">Seu e-mail</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+      <div class="form__campo">
+        <label for="f-mensagem">Mensagem</label>
+        <textarea id="f-mensagem" name="message" rows="5" required></textarea>
+      </div>
+      <p class="form__aviso">Seus dados são usados só para responder a esta mensagem.</p>
+      <div class="form__acoes">
+        <button type="submit" class="botao botao--escuro" id="form-enviar">Enviar mensagem</button>
+        <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <ul class="rodape__links">
+      <li><a href="tel:+5511987179573">(11) 98717-9573</a></li>
+      <li><span class="pendente">[Instagram — @ a confirmar]</span></li>
+      <li>Cia Teatro Enlatado <span class="pendente">[link do site a confirmar]</span></li>
+      <li><a href="portfolio-maira-de-grandi.pdf">Portfólio em PDF</a></li>
+    </ul>
+    <p class="rodape__creditos">© 2026 Maíra De Grandi · Fotos: <span class="pendente">[créditos dos fotógrafos]</span></p>
+  </div>
+</footer>
+
+<script src="js/filtro.js"></script>
+<script src="js/contato.js"></script>
+</body>
+</html>
